@@ -14,6 +14,12 @@ app.use(bodyParser.json())
 
 // env data
 PORT= process.env.PORT;
+MONGO_URI= process.env.MONGO_URI;
+
+// Database
+mongoose.connect(MONGO_URI)
+    .then(()=> console.log("MongoDB connected"))
+    .catch(err=> console.error("MongoDB error: ", err));
 
 // routes
 app.get("/",(req,res)=>{

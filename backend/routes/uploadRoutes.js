@@ -1,6 +1,7 @@
 const express= require("express");
 const multer= require("multer");
 const path= require("path");
+const { sendToMLModel } = require("../controller/imageController");
 
 const router= express.Router();
 
@@ -18,12 +19,6 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage })
 
 // Post route
-router.post("/", upload.array("images",5), (req,res)=>{
-    const imagePaths = req.files.map(file => file.path);
-    res.json({
-        message: "Images uploaded successfully",
-        images: imagePaths
-    });
-})
+router.post("/", upload.array("images",5), sendToMLModel);
 
 module.exports = router;
