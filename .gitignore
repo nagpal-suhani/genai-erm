@@ -25,3 +25,17 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# backend uploaded images
+uploads/
+
+# backend logs
+logs/
+*.log
+
+# OS hidden files
+.DS_Store
+Thumbs.db
+
+# IDE settings (optional)
+.vscode/
