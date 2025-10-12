@@ -1,18 +1,18 @@
 const axios= require("axios");
+const Job = require("../models/Job");
+const mlQueue = require("../queues/mlQueue");
 
 // controller function to upload images
 exports.sendToMLModel = async(req,res)=>{
     try{
         const imagePaths = req.files.map(file => file.path);
 
-        const job = await Job.create({ images: imagePaths });
+        const job = await Job.create({ images: imagePaths, status: "queued",});
 
-        const payload= {images: imagePaths};
-        const response= await axios.post(process.env.MODEL_API_URL, payload);
-
-        job.result = response.data;
-        job.status = "completed";
-        await job.save();
+        await mlQueue.add("processML", {
+            jobId: job._id.toString(),
+            images: imagePaths,
+        });
 
         res.json({
             message:"Image processing successful",
