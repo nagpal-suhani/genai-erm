@@ -22,3 +22,27 @@
 > This willl run on [**Localhost 3000**](localhost:3000)
 
 **Tech Stack**: `NextJs`, `TailwindCSS`, `React-router`, etc.
+
+### ✨ [Frontend (`NextJs`/`TailwindCSS`)](./backend/)
+1.
+    ```sh
+    cd backend
+    ```
+1.
+    ```sh
+    npm install
+    ```
+1. Create a .env file in the backend folder (by removing `.example` from `.env.example` file and putting the values into it.)
+1. Start server
+    ```sh
+    npm install -g nodemon   # install globally (first time only)
+    nodemon server.js
+    ```
+1. Setup redis
+`redis-server`
+1. setup mlqueues
+`node workers/mlWorkers.js`
+
+
+
+**Tech Stack**: `NodeJs`, `ExpressJs`, `Mongoose`, etc.
