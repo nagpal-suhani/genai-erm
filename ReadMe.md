@@ -40,9 +40,9 @@
     ```
 1. Setup redis
 `redis-server`
-1. setup mlqueues
+1. Start mlqueues
 `node workers/mlWorkers.js`
 
 
 
-> **Tech Stack:** `NodeJs`, `ExpressJs`, `Mongoose`, etc.
+> **Tech Stack:** `NodeJs`, `ExpressJs`, `Mongoose`, `Multer`, `BullMQ`, `Redis` etc.
