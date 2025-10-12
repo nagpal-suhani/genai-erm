@@ -2,6 +2,10 @@
 
 import Image from "next/image"
 import { cn } from "@/lib/utils"
+import ReactCompareImage from "react-compare-image";
+// Import local visualization image so Next.js can optimize/resolve it
+import img1 from '../../model/analysis_results/visualizations/madagascar_2003_segmentation_mask.png'
+import img2 from '../../model/images/madagascar_2003.png'
 
 type HeroProps = {
   title: string
@@ -23,14 +27,20 @@ export function Hero({ title, subtitle, imageAlt = "Satellite operations", class
       </div>
       <div className="relative mx-auto mt-2 max-w-6xl overflow-hidden rounded-xl border bg-card">
         {/* Use a large hero placeholder image */}
-        <Image
-          src="/high-resolution-satellite-assembly-laboratory.jpg"
+        {/* <Image
+          src={img2}
           alt={imageAlt}
           width={1200}
           height={520}
           className="h-auto w-full object-cover"
           priority
+        /> */}
+        
+        <ReactCompareImage
+          leftImage={img1.src}
+          rightImage={img2.src}
         />
+
       </div>
     </header>
   )
