@@ -4,9 +4,9 @@
 **Objective**: GENAI Earth Resource Monitor is a system that analyzes satellite imagery to detect changes in forest cover, urban areas, and water bodies. The system automatically generates detailed and simple language reports for decision-makers, combining past trends and current metrics to give predictive forecasts.
 `GenAI`, `NextJs`, `Image processing`
 
-## ⚓ Project local setup
+## ⚙️ Project Local Setup
 
-### ✨ [Frontend (`NextJs`/`TailwindCSS`)](./frontend/)
+### ⌛ [Frontend (`NextJs`/`TailwindCSS`)](./frontend/)
 1. Clone the repo.
     ```sh
     git clone https://github.com/shivamm-verma/genai-earth-resource-monitor.git
@@ -19,11 +19,11 @@
     ```sh
     npm run dev
     ```
-> This willl run on [**Localhost 3000**](localhost:3000)
+> This willl run on [**Localhost 3000**](https://localhost:3000)
 
-**Tech Stack**: `NextJs`, `TailwindCSS`, `React-router`, etc.
+> **Tech Stack:** `NextJs`, `TailwindCSS`, `React-router`, etc.
 
-### ✨ [Frontend (`NextJs`/`TailwindCSS`)](./backend/)
+### ⌛ [Backend (`NodeJs`/`Expressjs`)](./backend/)
 1.
     ```sh
     cd backend
@@ -45,4 +45,4 @@
 
 
 
-**Tech Stack**: `NodeJs`, `ExpressJs`, `Mongoose`, etc.
+> **Tech Stack:** `NodeJs`, `ExpressJs`, `Mongoose`, etc.
