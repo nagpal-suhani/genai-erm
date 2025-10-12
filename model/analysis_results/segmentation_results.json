@@ -1,0 +1,83 @@
+{
+  "images/madagascar_2003.png": {
+    "forest": {
+      "pixel_count": 49200,
+      "percentage": 9.57,
+      "area_km2": 4.92
+    },
+    "urban_barren": {
+      "pixel_count": 177605,
+      "percentage": 34.55,
+      "area_km2": 17.76
+    },
+    "water": {
+      "pixel_count": 287168,
+      "percentage": 55.87,
+      "area_km2": 28.72
+    },
+    "glacier": {
+      "pixel_count": 0,
+      "percentage": 0.0,
+      "area_km2": 0.0
+    },
+    "agriculture": {
+      "pixel_count": 7,
+      "percentage": 0.0,
+      "area_km2": 0.0
+    }
+  },
+  "images/madagascar_2012.png": {
+    "forest": {
+      "pixel_count": 55384,
+      "percentage": 10.49,
+      "area_km2": 5.54
+    },
+    "urban_barren": {
+      "pixel_count": 207362,
+      "percentage": 39.28,
+      "area_km2": 20.74
+    },
+    "water": {
+      "pixel_count": 265171,
+      "percentage": 50.23,
+      "area_km2": 26.52
+    },
+    "glacier": {
+      "pixel_count": 0,
+      "percentage": 0.0,
+      "area_km2": 0.0
+    },
+    "agriculture": {
+      "pixel_count": 7,
+      "percentage": 0.0,
+      "area_km2": 0.0
+    }
+  },
+  "images/madagascar_2022.png": {
+    "forest": {
+      "pixel_count": 38323,
+      "percentage": 7.2,
+      "area_km2": 3.83
+    },
+    "urban_barren": {
+      "pixel_count": 215761,
+      "percentage": 40.54,
+      "area_km2": 21.58
+    },
+    "water": {
+      "pixel_count": 278140,
+      "percentage": 52.26,
+      "area_km2": 27.81
+    },
+    "glacier": {
+      "pixel_count": 0,
+      "percentage": 0.0,
+      "area_km2": 0.0
+    },
+    "agriculture": {
+      "pixel_count": 0,
+      "percentage": 0.0,
+      "area_km2": 0.0
+    }
+  }
+}

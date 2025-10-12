@@ -1,0 +1,288 @@
+{
+  "analysis_metadata": {
+    "generated_at": "2025-10-12T22:21:03.497671",
+    "data_source": "analysis_results/segmentation_results.json",
+    "years_analyzed": [
+      2003,
+      2012,
+      2022
+    ],
+    "target_projection_year": 2030
+  },
+  "yearly_data": {
+    "2003": {
+      "forest": {
+        "pixel_count": 49200,
+        "percentage": 9.57,
+        "area_km2": 4.92
+      },
+      "urban_barren": {
+        "pixel_count": 177605,
+        "percentage": 34.55,
+        "area_km2": 17.76
+      },
+      "water": {
+        "pixel_count": 287168,
+        "percentage": 55.87,
+        "area_km2": 28.72
+      },
+      "glacier": {
+        "pixel_count": 0,
+        "percentage": 0.0,
+        "area_km2": 0.0
+      },
+      "agriculture": {
+        "pixel_count": 7,
+        "percentage": 0.0,
+        "area_km2": 0.0
+      }
+    },
+    "2012": {
+      "forest": {
+        "pixel_count": 55384,
+        "percentage": 10.49,
+        "area_km2": 5.54
+      },
+      "urban_barren": {
+        "pixel_count": 207362,
+        "percentage": 39.28,
+        "area_km2": 20.74
+      },
+      "water": {
+        "pixel_count": 265171,
+        "percentage": 50.23,
+        "area_km2": 26.52
+      },
+      "glacier": {
+        "pixel_count": 0,
+        "percentage": 0.0,
+        "area_km2": 0.0
+      },
+      "agriculture": {
+        "pixel_count": 7,
+        "percentage": 0.0,
+        "area_km2": 0.0
+      }
+    },
+    "2022": {
+      "forest": {
+        "pixel_count": 38323,
+        "percentage": 7.2,
+        "area_km2": 3.83
+      },
+      "urban_barren": {
+        "pixel_count": 215761,
+        "percentage": 40.54,
+        "area_km2": 21.58
+      },
+      "water": {
+        "pixel_count": 278140,
+        "percentage": 52.26,
+        "area_km2": 27.81
+      },
+      "glacier": {
+        "pixel_count": 0,
+        "percentage": 0.0,
+        "area_km2": 0.0
+      },
+      "agriculture": {
+        "pixel_count": 0,
+        "percentage": 0.0,
+        "area_km2": 0.0
+      }
+    }
+  },
+  "trend_analysis": {
+    "forest": {
+      "historical_data": {
+        "years": [
+          2003,
+          2012,
+          2022
+        ],
+        "percentages": [
+          9.57,
+          10.49,
+          7.2
+        ],
+        "areas_km2": [
+          4.92,
+          5.54,
+          3.83
+        ]
+      },
+      "trend_analysis": {
+        "average_annual_change_pct": -1.0340837563808538,
+        "average_annual_change_area": -0.05105555555555554,
+        "total_period_change_pct": -24.764890282131663,
+        "trend_direction": "decreasing",
+        "volatility": 1.6974196102712298
+      },
+      "projections_2030": {
+        "projected_percentage": 6.82,
+        "projected_area_km2": 3.71,
+        "total_change_from_current_pct": -5.33,
+        "total_change_from_current_area": -0.12,
+        "confidence": "high"
+      }
+    },
+    "urban_barren": {
+      "historical_data": {
+        "years": [
+          2003,
+          2012,
+          2022
+        ],
+        "percentages": [
+          34.55,
+          39.28,
+          40.54
+        ],
+        "areas_km2": [
+          17.76,
+          20.74,
+          21.58
+        ]
+      },
+      "trend_analysis": {
+        "average_annual_change_pct": 0.9209594046757053,
+        "average_annual_change_area": 0.20755555555555538,
+        "total_period_change_pct": 17.337192474674392,
+        "trend_direction": "increasing",
+        "volatility": 3.158074307759927
+      },
+      "projections_2030": {
+        "projected_percentage": 43.63,
+        "projected_area_km2": 23.54,
+        "total_change_from_current_pct": 7.63,
+        "total_change_from_current_area": 1.96,
+        "confidence": "high"
+      }
+    },
+    "water": {
+      "historical_data": {
+        "years": [
+          2003,
+          2012,
+          2022
+        ],
+        "percentages": [
+          55.87,
+          50.23,
+          52.26
+        ],
+        "areas_km2": [
+          28.72,
+          26.52,
+          27.81
+        ]
+      },
+      "trend_analysis": {
+        "average_annual_change_pct": -0.35875525057737206,
+        "average_annual_change_area": -0.057722222222222216,
+        "total_period_change_pct": -6.461428315732951,
+        "trend_direction": "decreasing",
+        "volatility": 2.856647218914743
+      },
+      "projections_2030": {
+        "projected_percentage": 49.56,
+        "projected_area_km2": 26.89,
+        "total_change_from_current_pct": -5.17,
+        "total_change_from_current_area": -0.92,
+        "confidence": "high"
+      }
+    },
+    "glacier": {
+      "historical_data": {
+        "years": [
+          2003,
+          2012,
+          2022
+        ],
+        "percentages": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "areas_km2": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "trend_analysis": {
+        "average_annual_change_pct": 0.0,
+        "average_annual_change_area": 0.0,
+        "total_period_change_pct": 0,
+        "trend_direction": "decreasing",
+        "volatility": 0.0
+      },
+      "projections_2030": {
+        "projected_percentage": 0,
+        "projected_area_km2": 0,
+        "total_change_from_current_pct": 0,
+        "total_change_from_current_area": 0.0,
+        "confidence": "high"
+      }
+    },
+    "agriculture": {
+      "historical_data": {
+        "years": [
+          2003,
+          2012,
+          2022
+        ],
+        "percentages": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "areas_km2": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "trend_analysis": {
+        "average_annual_change_pct": 0.0,
+        "average_annual_change_area": 0.0,
+        "total_period_change_pct": 0,
+        "trend_direction": "decreasing",
+        "volatility": 0.0
+      },
+      "projections_2030": {
+        "projected_percentage": 0,
+        "projected_area_km2": 0,
+        "total_change_from_current_pct": 0,
+        "total_change_from_current_area": 0.0,
+        "confidence": "high"
+      }
+    }
+  },
+  "critical_findings": [
+    "Rapid deforestation detected - 24.8% loss historically"
+  ],
+  "summary": {
+    "most_significant_changes": [
+      {
+        "land_cover": "forest",
+        "change_pct": -24.764890282131663,
+        "direction": "decreasing"
+      },
+      {
+        "land_cover": "urban_barren",
+        "change_pct": 17.337192474674392,
+        "direction": "increasing"
+      },
+      {
+        "land_cover": "water",
+        "change_pct": -6.461428315732951,
+        "direction": "decreasing"
+      }
+    ],
+    "overall_risk_level": "HIGH",
+    "key_concerns": [
+      "Rapid deforestation detected - 24.8% loss historically"
+    ]
+  }
+}

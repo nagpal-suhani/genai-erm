@@ -1,0 +1,16 @@
+{
+  "api_enhancement": {
+    "status": "success",
+    "provider": "gemini",
+    "executive_summary": "API Error: 404 Client Error: Not Found for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash/generateContent?key=AIzaSyAJSYvuCpsNOogsKbactKkvhtfWo8bbctM",
+    "impact_analysis": {
+      "raw_response": "API Error: 404 Client Error: Not Found for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash/generateContent?key=AIzaSyAJSYvuCpsNOogsKbactKkvhtfWo8bbctM",
+      "note": "No structured JSON found in response"
+    },
+    "policy_recommendations": {
+      "raw_response": "API Error: 404 Client Error: Not Found for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash/generateContent?key=AIzaSyAJSYvuCpsNOogsKbactKkvhtfWo8bbctM",
+      "note": "No structured JSON found in response"
+    },
+    "generated_at": "2025-10-12T22:21:06.312084"
+  }
+}
