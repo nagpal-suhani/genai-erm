@@ -1,7 +1,7 @@
 const express= require("express");
 const multer= require("multer");
 const path= require("path");
-const { sendToMLModel } = require("../controller/imageController");
+const { sendToMLModel, getResults } = require("../controller/imageController");
 
 const router= express.Router();
 
@@ -20,5 +20,8 @@ const upload = multer({ storage: storage })
 
 // Post route
 router.post("/", upload.array("images",5), sendToMLModel);
+
+// Get job status route
+router.get("/status/:jobId", getResults);
 
 module.exports = router;

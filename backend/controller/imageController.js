@@ -29,3 +29,15 @@ exports.sendToMLModel = async(req,res)=>{
         res.status(500).json({ error: "Error processing images", jobId: job._id});
     }
 }
+
+exports.getResults= async (req, res) => {
+  const Job = require("../models/Job"); // import Job model
+
+  try {
+    const job = await Job.findById(req.params.jobId);
+    if (!job) return res.status(404).json({ error: "Job not found" });
+    res.json(job);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+}
