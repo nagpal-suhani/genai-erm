@@ -13,7 +13,7 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           <Link href="/" className="flex items-center gap-2">
             <Image
-              src={"/placeholder.svg?height=28&width=28&query=brand%20logo"}
+              src="/genai-erm-logo.png"
               alt="GenAI Earth Resource Monitor logo"
               width={28}
               height={28}
@@ -51,11 +51,11 @@ export function Navbar() {
           </Link>
         </nav>
 
-        <div className="hidden md:block">
+        {/* <div className="hidden md:block">
           <Button variant="default" size="sm">
             Get a Demo
           </Button>
-        </div>
+        </div> */}
 
         <div className="md:hidden">
           <Sheet>
