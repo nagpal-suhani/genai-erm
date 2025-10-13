@@ -22,9 +22,13 @@ export default function Page() {
       <Subnav />
 
       {/* Ground Control Section */}
-      <section id="key-features" aria-labelledby="ground-control-heading" className="mx-auto max-w-6xl px-4 py-12">
+      <section
+        id="key-features"
+        aria-labelledby="ground-control-heading"
+        className="scroll-mt-20 mx-auto max-w-6xl px-4 py-12"
+      >
         <p className="text-center text-xs uppercase tracking-wide text-muted-foreground">What does this feature</p>
-        <h2 id="ground-control-heading" className="mt-2 text-center text-2xl font-black md:text-4xl">
+        <h2 id="ground-control-heading" className="mt-2 text-center text-2xl font-black md:text-3xl">
           Key features
         </h2>
         <p className="mx-auto mt-3 max-w-3xl text-center text-sm leading-relaxed text-muted-foreground">
@@ -54,11 +58,11 @@ export default function Page() {
             description="Visualize changes with interactive maps, charts, and image overlays."
             imageQuery="../key-features/visualiz.jpg"
           />
-            <FeatureCard
-              title="Multi-Year Comparisons"
-              description="Compare land use and cover across years for trend analysis."
-              imageQuery="../key-features/multi-year.jpg"
-            />
+          <FeatureCard
+            title="Multi-Year Comparisons"
+            description="Compare land use and cover across years for trend analysis."
+            imageQuery="../key-features/multi-year.jpg"
+          />
           <FeatureCard
             title="Interactive Maps"
             description="Explore change layers, overlay timelines, and toggle data layers to answer specific on‑the‑ground questions."
@@ -70,11 +74,15 @@ export default function Page() {
       <FeatureBanner />
 
       {/* Earth Observation & Science */}
-      <section id="earth-observation" aria-labelledby="eo-heading" className="mx-auto max-w-6xl px-4 py-12">
+      <section
+        id="earth-observation"
+        aria-labelledby="eo-heading"
+        className="scroll-mt-20 mx-auto max-w-6xl px-4 py-12"
+      >
         <p className="text-center text-xs uppercase tracking-wide text-muted-foreground">
           Earth Observation &amp; Science
         </p>
-        <h2 id="eo-heading" className="mt-2 text-center text-2xl font-semibold md:text-3xl">
+        <h2 id="eo-heading" className="mt-2 text-center text-2xl font-black md:text-3xl">
           Earth Observation &amp; Science
         </h2>
         <p className="mx-auto mt-3 max-w-3xl text-center text-sm leading-relaxed text-muted-foreground">

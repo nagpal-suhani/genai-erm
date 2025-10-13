@@ -7,7 +7,7 @@ export function FeatureBanner() {
       <div className="grid grid-cols-1 overflow-hidden rounded-xl border md:grid-cols-2">
         <div className="bg-primary p-8 text-primary-foreground">
           <p className="text-xs uppercase tracking-wide opacity-90">Feature Story</p>
-          <h3 id="feature" className="mt-2 text-pretty text-2xl font-semibold md:text-3xl">
+          <h3 id="feature" className="mt-2 text-pretty text-2xl font-bold md:text-3xl">
             What it’s like to watch a launch in person
           </h3>
           <p className="mt-3 max-w-md text-sm leading-relaxed">

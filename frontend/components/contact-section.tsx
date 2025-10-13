@@ -1,6 +1,6 @@
 export default function ContactSection() {
   return (
-    <section id="contact" aria-labelledby="contact-title" className="mx-auto max-w-6xl px-4 py-16 md:px-6 lg:px-8">
+    <section id="contact" aria-labelledby="contact-title" className="scroll-mt-18 mx-auto max-w-6xl px-4 py-16 md:px-6 lg:px-8">
       <p className="text-xs uppercase tracking-widest text-muted-foreground">Contact</p>
       <h2 id="contact-title" className="mt-2 font-display text-2xl font-semibold text-foreground">
         Get in touch
