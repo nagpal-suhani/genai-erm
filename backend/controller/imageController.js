@@ -17,8 +17,8 @@ exports.sendToMLModel = async(req,res)=>{
         });
 
         res.json({
-            message:"Image processing successful",
-            jobId: job._id,
+            message:"Image upload successful",
+            jobId: job._i,
             result: job.result
         });
     }
