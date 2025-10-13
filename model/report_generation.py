@@ -22,7 +22,8 @@ class APIEnhancer:
             self.api_key = os.getenv('GEMINI_API_KEY')
             if not self.api_key:
                 raise ValueError("GEMINI_API_KEY not found. Please create a .env file with your API key")
-            self.base_url = self.base_url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash/generateContent"
+            self.base_url = "https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash:generateContent"
+            
         else:
             raise ValueError(f"Unsupported provider: {self.provider}")
     
@@ -39,7 +40,7 @@ class APIEnhancer:
                     "temperature": 0.3,
                     "topK": 40,
                     "topP": 0.95,
-                    "maxOutputTokens": 1024,
+                    "maxOutputTokens": 4096,
                 }
             }
             
@@ -47,13 +48,44 @@ class APIEnhancer:
                 f"{self.base_url}?key={self.api_key}",
                 headers=headers,
                 json=data,
-                timeout=30
+                timeout=120
             )
             response.raise_for_status()
-            return response.json()['candidates'][0]['content']['parts'][0]['text']
+            response_json = response.json()
+            if 'candidates' in response_json and response_json['candidates']:
+                candidate = response_json['candidates'][0]
+                
+                # Check for successful content part
+                if 'content' in candidate and 'parts' in candidate['content']:
+                    return candidate['content']['parts'][0]['text']
+                
+                # Check if content was blocked or finished with an unusual reason
+                elif 'finishReason' in candidate:
+                    reason = candidate.get('finishReason', 'UNKNOWN')
+                    # Look for safety ratings that indicate a block
+                    safety_ratings = candidate.get('safetyRatings', [])
+                    block_info = [
+                        f"{r['category']} (Prob: {r['probability']})" 
+                        for r in safety_ratings if r.get('blocked') or r['probability'] in ['HIGH', 'VERY_HIGH']
+                    ]
+                    
+                    if block_info:
+                        return f"API Blocked: Content rejected. Reason: {reason}. Details: {', '.join(block_info)}"
+                    
+                    return f"API Incomplete: Finished with reason '{reason}' but no text part found."
             
+            # If the response structure is unexpected
+            return f"API Failure: Unexpected response structure: {json.dumps(response_json)[:300]}..."
+            # --- END: Robust Content Extraction ---
+
+        except requests.exceptions.HTTPError as e:
+            return f"API HTTP Error: {str(e)} - {response.text}"
         except Exception as e:
-            return f"API Error: {str(e)}"
+            # This catch is now for truly unexpected exceptions (like network or decoding errors)
+            return f"API General Error: {type(e).__name__}: {str(e)}"
+
+            
+       
     
     def generate_impact_analysis(self, trend_data: Dict) -> Dict:
         """Generate environmental impact analysis"""
