@@ -29,10 +29,8 @@ exports.sendToMLModel = async (req) => {
     await Job.findByIdAndUpdate(jobId, { status: "processing" });
 
     const form = new FormData();
-    imagePaths.forEach((path, index) => {
-      form.append('files', fs.createReadStream(path));
-      years.forEach((y, i) => form.append(`years[${i}]`, y));
-    });
+    imagePaths.forEach(path => form.append("files", fs.createReadStream(path)));
+    years.forEach((y, i) => form.append(`years[${i}]`, y));
 
     const response = await axios.post(process.env.MODEL_API_URL, form, {
       headers: form.getHeaders(),
