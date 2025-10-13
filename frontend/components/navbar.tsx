@@ -27,7 +27,7 @@ export function Navbar() {
         <nav className="hidden items-center gap-6 md:flex">
           <Link
             className="text-xs uppercase tracking-wide text-muted-foreground transition-colors hover:text-foreground"
-            href="/#ground-control"
+            href="/#key-features"
           >
             What We Do
           </Link>
@@ -66,7 +66,7 @@ export function Navbar() {
             </SheetTrigger>
             <SheetContent side="right" className="w-72">
               <div className="mt-8 grid gap-4">
-                <Link href="/#ground-control" className="text-foreground text-sm uppercase tracking-wide">
+                <Link href="/#key-features" className="text-foreground text-sm uppercase tracking-wide">
                   What We Do
                 </Link>
                 <Link href="/#earth-observation" className="text-foreground text-sm uppercase tracking-wide">

@@ -5,7 +5,7 @@ import { useEffect, useState } from "react"
 import { cn } from "@/lib/utils"
 
 const items = [
-  { href: "#ground-control", label: "Ground Control" },
+  { href: "#key-features", label: "Deliverables" },
   { href: "#earth-observation", label: "Earth Observation & Science" },
 ]
 

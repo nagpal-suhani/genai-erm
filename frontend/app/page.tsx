@@ -22,10 +22,10 @@ export default function Page() {
       <Subnav />
 
       {/* Ground Control Section */}
-      <section id="ground-control" aria-labelledby="ground-control-heading" className="mx-auto max-w-6xl px-4 py-12">
-        <p className="text-center text-xs uppercase tracking-wide text-muted-foreground">Ground Control</p>
-        <h2 id="ground-control-heading" className="mt-2 text-center text-2xl font-semibold md:text-3xl">
-          Ground Control
+      <section id="key-features" aria-labelledby="ground-control-heading" className="mx-auto max-w-6xl px-4 py-12">
+        <p className="text-center text-xs uppercase tracking-wide text-muted-foreground">What does this feature</p>
+        <h2 id="ground-control-heading" className="mt-2 text-center text-2xl font-bold md:text-3xl">
+          Key features
         </h2>
         <p className="mx-auto mt-3 max-w-3xl text-center text-sm leading-relaxed text-muted-foreground">
           Orchestrating satellite constellations and processing the data they collect to deliver actionable insights to
