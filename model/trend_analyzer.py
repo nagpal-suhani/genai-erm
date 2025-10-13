@@ -2,7 +2,6 @@
 import numpy as np
 import json
 from typing import Dict, List, Tuple
-from datetime import datetime
 import statistics
 
 class TrendAnalyzer:
@@ -144,7 +143,6 @@ class TrendAnalyzer:
         
         report = {
             'analysis_metadata': {
-                'generated_at': datetime.now().isoformat(),
                 'data_source': json_path,
                 'years_analyzed': list(yearly_data.keys()),
                 'target_projection_year': self.target_year

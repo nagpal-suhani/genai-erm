@@ -3,7 +3,6 @@ import os
 import json
 import requests
 from typing import Dict
-import datetime
 from dotenv import load_dotenv
 
 class APIEnhancer:
@@ -235,7 +234,6 @@ Keep it professional, data-driven, and compelling for decision-makers.
                     "executive_summary": executive_summary,
                     "impact_analysis": impact_analysis,
                     "policy_recommendations": recommendations,
-                    "generated_at": datetime.datetime.now().isoformat()
                 }
             }
             
@@ -244,6 +242,5 @@ Keep it professional, data-driven, and compelling for decision-makers.
                 "api_enhancement": {
                     "status": "error",
                     "error": str(e),
-                    "generated_at": datetime.datetime.now().isoformat()
                 }
             }

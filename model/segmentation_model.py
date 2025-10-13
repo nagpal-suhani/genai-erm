@@ -17,7 +17,7 @@ class SimpleLandCoverSegmenter:
     def segment_image(self, image_path):
         """
         Simple segmentation using color thresholding and texture analysis
-        This is a simplified approach
+        simplified approach
         """
         # Read image
         image = cv2.imread(image_path)

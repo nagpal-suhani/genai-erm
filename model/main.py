@@ -3,7 +3,6 @@ import cv2
 import numpy as np
 import json
 import os
-from datetime import datetime
 from segmentation_model import SimpleLandCoverSegmenter
 from trend_analyzer import TrendAnalyzer
 from report_generation import APIEnhancer
@@ -70,7 +69,6 @@ def generate_comprehensive_report(json_data_path, output_report_path=None):
     except Exception as e:
         error_result = {
             'error': str(e),
-            'generated_at': datetime.now().isoformat()
         }
         if output_report_path:
             with open(output_report_path, 'w') as f:
@@ -106,7 +104,6 @@ def run_complete_analysis(image_paths, output_base_dir="results"):
     # Step 4: Generate final combined report
     final_report = {
         'analysis_metadata': {
-            'generated_at': datetime.now().isoformat(),
             'analysis_type': 'complete_environmental_analysis',
             'images_analyzed': image_paths,
             'api_provider_used': 'gemini',
@@ -124,9 +121,9 @@ def run_complete_analysis(image_paths, output_base_dir="results"):
 
 if __name__ == "__main__":
     image_paths = [
-        "images/madagascar_2003.png",
-        "images/madagascar_2012.png", 
-        "images/madagascar_2022.png"
+        "images/alaska_2000.png",
+        "images/alaska_2012.png", 
+        "images/alaska_2022.png"
     ]
     
     final_results = run_complete_analysis(image_paths, "analysis_results")
