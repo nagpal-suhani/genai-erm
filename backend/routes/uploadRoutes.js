@@ -29,23 +29,25 @@ const upload = multer({ storage });
 // POST route → handles multiple file uploads
 router.post("/", upload.array("images", 5), async (req, res) => {
   try {
-    // file URLs served from /uploads in server.js
+    // Generate file URLs for frontend preview
     const fileURLs = req.files.map(
       (file) => `/uploads/${path.basename(file.path)}`
     );
 
-    // Optional: if you still want to trigger ML model
-    await sendToMLModel(req, res);
+    // Trigger ML model and get result (sendToMLModel returns data, does not use res)
+    const mlResult=await sendToMLModel(req);
 
-    // Return success + file URLs for frontend preview
-    res.status(200).json({
+    // Send a single response with both file URLs and ML result
+    return res.status(200).json({
       success: true,
       message: "Files uploaded successfully",
       files: fileURLs,
+      mlResult,
     });
+    
   } catch (error) {
     console.error("Upload error:", error);
-    res.status(500).json({ success: false, message: "Upload failed" });
+    return res.status(500).json({ success: false, message: "Upload failed", error: error.message });
   }
 });
 
