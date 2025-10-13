@@ -45,7 +45,7 @@
 
 > **Tech Stack:** `NodeJs`, `ExpressJs`, `Mongoose`, `Multer`, `BullMQ`, `Redis` etc.
 
-### ⌛ [Backend (`FastAPI`/`OpenCV`)](./model/)
+### ⌛ [ML Model (`FastAPI`/`OpenCV`)](./model/)
 1.
     ```sh
     cd model
@@ -53,13 +53,20 @@
 1.
     ```sh
     python -m venv venv
-    
+
     # in Windows
     venv\Scripts\activate
     # in MacOS/Linux
     source venv/bin/activate
     ```
-1. 
+1. download requirement.txt
     ```sh
     pip install -r requirements.txt
     ```
+1. Now locally run it;-
+    ```sh
+    uvicorn app:app --reload
+    ```
+1. Take care that, 
+    * `main.py`: Runs the local code, summarizes, using OpenCV. [Local File only]
+    * ✅ `app.py`: **FastAPI**  backend that talks with the website backend to connect the frontend. [wrapping up thee `main.py`]
