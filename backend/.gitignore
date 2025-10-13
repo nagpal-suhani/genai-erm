@@ -7,3 +7,6 @@ node_modules/
 # ignore upload images
 /uploads/*
 !/uploads/.gitkeep
+
+# ignore the dump.rdb by the redis-server
+dump.rdb
