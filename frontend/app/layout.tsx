@@ -19,6 +19,9 @@ export const metadata: Metadata = {
   description:
     "AI-powered earth observation: analyze satellite imagery, track environmental change, and generate plain-language reports with predictive insights.",
   generator: "v0.app",
+  icons: {
+    icon: "../genai-erm-logo.png", // Path to the favicon in the public directory
+  },
 }
 
 export default function RootLayout({
