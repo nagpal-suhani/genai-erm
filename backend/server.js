@@ -70,7 +70,7 @@ app.use((req, res) => {
 });
 
 // Server starts
-app.listen(PORT, '127.0.0.1', () => {
+app.listen(8080, '127.0.0.1', () => {
   console.log(`Server is running on port ${PORT}`);
   console.log(`Base URL: http://localhost:${PORT}`);
   console.log(`Server is running on http://127.0.0.1:${PORT}`);
