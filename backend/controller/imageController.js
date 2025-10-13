@@ -8,9 +8,19 @@ exports.sendToMLModel = async (req) => {
     
     const imagePaths = req.files.map(file => file.path);
 
-    console.log("Received images:", imagePaths);
+    const years = [req.body['year[0]'], req.body['year[1]'], req.body['year[2]']];
+    if (!req.files || req.files.length === 0) {
+      throw new Error("No images uploaded");
+    }
 
-    const job = await Job.create({ images: imagePaths, status: "queued" });
+    if (!req.body['year[0]'] || !req.body['year[1]'] || !req.body['year[2]']) {
+      throw new Error("Missing year fields in the form");
+    }
+
+    console.log("Received images:", imagePaths);
+    console.log("Received years:", years);
+
+    const job = await Job.create({ images: imagePaths, years, status: "queued" });
     console.log("Created job:", job);
     const jobId = job._id;
 
@@ -21,10 +31,13 @@ exports.sendToMLModel = async (req) => {
     const form = new FormData();
     imagePaths.forEach((path, index) => {
       form.append('files', fs.createReadStream(path));
+      years.forEach((y, i) => form.append(`years[${i}]`, y));
     });
 
     const response = await axios.post(process.env.MODEL_API_URL, form, {
       headers: form.getHeaders(),
+      maxContentLength: Infinity,
+      maxBodyLength: Infinity
     });
 
     const result = response.data;
@@ -36,7 +49,8 @@ exports.sendToMLModel = async (req) => {
     return { success: true, jobId, result };
 
   } catch (error) {
-    console.error(error);
+    console.error("❌ Error in sendToMLModel:", error.response?.data || error.message);
+    await Job.findByIdAndUpdate(jobId, { status: "failed", error: error.message });
     throw error;
   }
 };
