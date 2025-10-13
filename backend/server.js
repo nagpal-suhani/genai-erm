@@ -33,7 +33,8 @@ app.use((req, res, next) => {
 });
 
 // Environment variables
-const PORT = process.env.PORT || 5000;
+// const PORT = process.env.PORT || 5000;
+const PORT = 8080;
 const MONGO_URI = process.env.MONGO_URI;
 
 // Database connection
@@ -70,7 +71,7 @@ app.use((req, res) => {
 });
 
 // Server starts
-app.listen(8080, '127.0.0.1', () => {
+app.listen(PORT, '127.0.0.1', () => {
   console.log(`Server is running on port ${PORT}`);
   console.log(`Base URL: http://localhost:${PORT}`);
   console.log(`Server is running on http://127.0.0.1:${PORT}`);

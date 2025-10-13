@@ -53,9 +53,13 @@
 1.
     ```sh
     python -m venv venv
+    
     # in Windows
     venv\Scripts\activate
     # in MacOS/Linux
     source venv/bin/activate
     ```
-1. ...
+1. 
+    ```sh
+    pip install -r requirements.txt
+    ```
