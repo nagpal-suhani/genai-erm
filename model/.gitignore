@@ -1,2 +1,4 @@
 venv/
 .env
+api_results/
+__pychache__/

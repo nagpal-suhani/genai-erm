@@ -1,4 +1,4 @@
-from fastapi import FastAPI, UploadFile, File
+from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from typing import List
 import os
@@ -28,9 +28,11 @@ async def analyze_images(files: List[UploadFile] = File(...)):
             f.write(await file.read())
         image_paths.append(file_path)
 
-    # Run your full analysis pipeline
-    results = run_complete_analysis(image_paths, output_base_dir="api_results")
-
-    # Optionally, clean up temp files here
-
-    return {"status": "success", "data": results}
+    try:
+        # Run your full analysis pipeline
+        results = run_complete_analysis(image_paths, output_base_dir="api_results")
+        # Optionally, clean up temp files here
+        return {"status": "success", "data": results}
+    except Exception as e:
+        print(f"Error during analysis: {e}")
+        raise HTTPException(status_code=500, detail={"status": "error", "message": str(e)})

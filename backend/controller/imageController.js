@@ -3,7 +3,7 @@ const Job = require("../models/Job");
 const FormData = require("form-data");
 const fs = require("fs");
 
-exports.sendToMLModel = async (req, res) => {
+exports.sendToMLModel = async (req) => {
   try {
     
     const imagePaths = req.files.map(file => file.path);
@@ -18,7 +18,14 @@ exports.sendToMLModel = async (req, res) => {
 
     await Job.findByIdAndUpdate(jobId, { status: "processing" });
 
-    const response = await axios.post(process.env.MODEL_API_URL, {imagePaths});
+    const form = new FormData();
+    imagePaths.forEach((path, index) => {
+      form.append('files', fs.createReadStream(path));
+    });
+
+    const response = await axios.post(process.env.MODEL_API_URL, form, {
+      headers: form.getHeaders(),
+    });
 
     const result = response.data;
 
@@ -26,15 +33,11 @@ exports.sendToMLModel = async (req, res) => {
 
     console.log("✅ Job completed:", jobId);
 
-    // Send response back to frontend exactly once
-    return res.json({ success: true, jobId, result });
+    return { success: true, jobId, result };
 
   } catch (error) {
     console.error(error);
-
-    if (!res.headersSent) {
-      return res.status(500).json({ error: "Error processing images" });
-    }
+    throw error;
   }
 };
 
