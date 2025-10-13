@@ -14,7 +14,8 @@ export function FeatureCard({ title, description, imageQuery, href = "#" }: Feat
     <Card className="h-full overflow-hidden">
       <CardHeader className="p-0">
         <Image
-          src={`/.jpg?height=180&width=380&query=${encodeURIComponent(imageQuery)}`}
+          // src={`/.jpg?height=180&width=380&query=${encodeURIComponent(imageQuery)}`}
+          src={imageQuery}
           alt={title}
           width={380}
           height={180}

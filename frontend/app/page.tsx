@@ -24,7 +24,7 @@ export default function Page() {
       {/* Ground Control Section */}
       <section id="key-features" aria-labelledby="ground-control-heading" className="mx-auto max-w-6xl px-4 py-12">
         <p className="text-center text-xs uppercase tracking-wide text-muted-foreground">What does this feature</p>
-        <h2 id="ground-control-heading" className="mt-2 text-center text-2xl font-bold md:text-3xl">
+        <h2 id="ground-control-heading" className="mt-2 text-center text-2xl font-black md:text-4xl">
           Key features
         </h2>
         <p className="mx-auto mt-3 max-w-3xl text-center text-sm leading-relaxed text-muted-foreground">
@@ -33,40 +33,36 @@ export default function Page() {
         </p>
 
         {/* Feature grid - row 1 */}
-        <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-3">
+        <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-3 lg:grid-cols-3">
           <FeatureCard
-            title="AI Image Analysis"
-            description="Classifies forests, urban areas, and water bodies from multi‑spectral imagery. Detects change regions with explainable overlays."
-            imageQuery="satellite%20imagery%20classification%20map%20overlay"
+            title="Predictions for Future"
+            description="Forecast land use changes and environmental trends using advanced AI models."
+            imageQuery="../key-features/future-predict.jpg"
           />
           <FeatureCard
-            title="Metrics Computation"
-            description="Calculates change percentages and trends over time at national, regional, and site scales with transparent methods."
-            imageQuery="geospatial%20dashboard%20metrics%20charts"
+            title="Summaries of Land Use"
+            description="Generate concise summaries of land cover, urbanization, and natural resources."
+            imageQuery="../key-features/land-use.jpg"
           />
           <FeatureCard
-            title="Predictive Modeling"
-            description="Forecasts deforestation, urban growth, and water depletion using time‑series models tuned to local conditions."
-            imageQuery="predictive%20map%20forecast%20raster%20layers"
-          />
-        </div>
-
-        {/* Feature grid - row 2 */}
-        <div className="mt-5 grid grid-cols-1 gap-5 md:grid-cols-3">
-          <FeatureCard
-            title="Report Generation"
-            description="Produces plain‑language briefings and recommendations for decision‑makers—combining trends, current metrics, and forecasts."
-            imageQuery="report%20document%20summary%20with%20charts"
+            title="Report & Summary Generation"
+            description="Create downloadable reports and executive summaries for stakeholders."
+            imageQuery="../key-features/summary-generation.jpg"
           />
           <FeatureCard
-            title="Change History Explorer"
-            description="Browse historical baselines with interactive timelines to validate interventions and quantify impact."
-            imageQuery="time-series%20map%20slider%20environment"
+            title="Visualization"
+            description="Visualize changes with interactive maps, charts, and image overlays."
+            imageQuery="../key-features/visualiz.jpg"
           />
+            <FeatureCard
+              title="Multi-Year Comparisons"
+              description="Compare land use and cover across years for trend analysis."
+              imageQuery="../key-features/multi-year.jpg"
+            />
           <FeatureCard
-            title="Geospatial API"
-            description="Standards‑based endpoints deliver tiles, vector data, and insights for integration with existing systems."
-            imageQuery="api%20endpoint%20map%20integration%20architecture"
+            title="Interactive Maps"
+            description="Explore change layers, overlay timelines, and toggle data layers to answer specific on‑the‑ground questions."
+            imageQuery="../key-features/interactive-maps.jpg"
           />
         </div>
       </section>
