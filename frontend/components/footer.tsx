@@ -15,7 +15,7 @@ export function Footer() {
               </li>
               <li>
                 <Link href="#key-features" className="hover:underline">
-                  What We Do
+                  Key features
                 </Link>
               </li>
               <li>

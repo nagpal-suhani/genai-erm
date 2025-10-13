@@ -15,7 +15,7 @@ export default function Page() {
 
       <section className="mx-auto max-w-6xl px-4 py-6 text-sm text-muted-foreground">
         <p>
-          Home / What We Do / <span className="text-foreground">GenAI Earth Resource Monitor</span>
+          Home / Key features / <span className="text-foreground">GenAI Earth Resource Monitor</span>
         </p>
       </section>
 

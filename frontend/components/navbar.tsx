@@ -29,7 +29,7 @@ export function Navbar() {
             className="text-xs uppercase tracking-wide text-muted-foreground transition-colors hover:text-foreground"
             href="/#key-features"
           >
-            What We Do
+            Key features
           </Link>
           <Link
             className="text-xs uppercase tracking-wide text-muted-foreground transition-colors hover:text-foreground"
