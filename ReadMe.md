@@ -43,6 +43,19 @@
 1. Start mlqueues
 `node workers/mlWorkers.js`
 
-
-
 > **Tech Stack:** `NodeJs`, `ExpressJs`, `Mongoose`, `Multer`, `BullMQ`, `Redis` etc.
+
+### ⌛ [Backend (`FastAPI`/`OpenCV`)](./model/)
+1.
+    ```sh
+    cd model
+    ```
+1.
+    ```sh
+    python -m venv venv
+    # in Windows
+    venv\Scripts\activate
+    # in MacOS/Linux
+    source venv/bin/activate
+    ```
+1. ...
