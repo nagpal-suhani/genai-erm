@@ -12,7 +12,7 @@ class TrendAnalyzer:
         with open(json_path, 'r') as f:
             return json.load(f)
     
-    def extract_years_from_filenames(self, data: Dict) -> Dict[int, Dict]:
+    '''def extract_years_from_filenames(self, data: Dict) -> Dict[int, Dict]:
         yearly_data = {}
         
         for filename, land_cover in data.items():
@@ -25,35 +25,42 @@ class TrendAnalyzer:
     def _extract_year(self, filename: str) -> int:
         import re
         match = re.search(r'(\d{4})', filename)
-        return int(match.group(1)) if match else None
+        return int(match.group(1)) if match else None'''
     
-    def calculate_trends(self, yearly_data: Dict) -> Dict:
-        trends = {}
-        years = list(yearly_data.keys())
+    def calculate_trends(self, years: list, segmentation_data: dict):    #receive year as a list here rather than extracting
+        trends = {} 
         
         if len(years) < 2:
             raise ValueError("Need at least 2 years of data for trend analysis")
+        
+        image_paths = list(segmentation_data.keys())
+        if len(image_paths) != len(years):
+            raise ValueError("Number of years does not match number of images uploaded")
         
         for land_cover_type in ['forest', 'urban_barren', 'water', 'glacier', 'agriculture']:
             percentages = []
             areas_km2 = []
             
-            for year, data in yearly_data.items():
+            for i, year in enumerate(years):
+                year = int(year)
+                data = segmentation_data[image_paths[i]]  # get corresponding land cover
                 if land_cover_type in data:
                     percentages.append(data[land_cover_type]['percentage'])
                     areas_km2.append(data[land_cover_type]['area_km2'])
                 else:
                     percentages.append(0.0)
                     areas_km2.append(0.0)
-            
+    
             trends[land_cover_type] = self._analyze_single_trend(
                 years, percentages, areas_km2, land_cover_type
             )
-        
+    
         return trends
     
-    def _analyze_single_trend(self, years: List[int], percentages: List[float], 
+    def _analyze_single_trend(self, years: List[str], percentages: List[float], 
                             areas_km2: List[float], land_cover_type: str) -> Dict:
+        if isinstance(years, str):
+            years = [int(y.strip()) for y in years.split(",") if y.strip().isdigit()]
         years_np = np.array(years)
         percentages_np = np.array(percentages)
         areas_np = np.array(areas_km2)
@@ -131,23 +138,23 @@ class TrendAnalyzer:
         
         return findings
     
-    def generate_mathematical_report(self, json_path: str) -> Dict:
+    def generate_mathematical_report(self, json_path: str, years) -> Dict:
         raw_data = self.load_json_data(json_path)
-        yearly_data = self.extract_years_from_filenames(raw_data)
+        yearly_data = years
         
         if not yearly_data:
-            raise ValueError("No valid yearly data found in JSON file")
+            raise ValueError("No valid yearly data provided")
         
-        trends = self.calculate_trends(yearly_data)
+        trends = self.calculate_trends(yearly_data, segmentation_data=raw_data)
         critical_findings = self.generate_critical_findings(trends)
         
         report = {
             'analysis_metadata': {
                 'data_source': json_path,
-                'years_analyzed': list(yearly_data.keys()),
+                'years_analyzed': yearly_data,
                 'target_projection_year': self.target_year
             },
-            'yearly_data': yearly_data,
+            'yearly_data': raw_data,
             'trend_analysis': trends,
             'critical_findings': critical_findings,
             'summary': self._generate_summary(trends)

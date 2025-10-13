@@ -1,4 +1,4 @@
-from fastapi import FastAPI, UploadFile, File, HTTPException
+from fastapi import FastAPI, UploadFile, File, Form, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from typing import List
 import os
@@ -17,20 +17,29 @@ app.add_middleware(
 )
 
 @app.post("/analyze")
-async def analyze_images(files: List[UploadFile] = File(...)):
-    temp_dir = tempfile.mkdtemp()
-
+async def analyze_images(
+    files: List[UploadFile] = File(...),
+    years: str = Form(...)
+):
+    # Convert comma-separated string into list of integers
+    years_list = [int(y.strip()) for y in years.split(",") if y.strip().isdigit()]
+    
+    if len(years_list) != len(files):
+        return {"status": "error", "message": "Number of years must match number of uploaded files."}
+    
     # Save uploaded files temporarily
+    temp_dir = tempfile.mkdtemp()
     image_paths = []
     for file in files:
         file_path = os.path.join(temp_dir, file.filename)
         with open(file_path, "wb") as f:
             f.write(await file.read())
         image_paths.append(file_path)
+    
 
     try:
         # Run your full analysis pipeline
-        results = run_complete_analysis(image_paths, output_base_dir="api_results")
+        results = run_complete_analysis(image_paths, years_list, output_base_dir="api_results")
         # Optionally, clean up temp files here
         return {"status": "success", "data": results}
     except Exception as e:

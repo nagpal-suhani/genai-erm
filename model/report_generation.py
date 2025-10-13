@@ -95,6 +95,7 @@ As an environmental scientist with expertise in land use change, analyze these l
 
 TREND DATA:
 {json.dumps(trend_data, indent=2)}
+Respond in this exact JSON format (no markdown, no explanation):
 
 Provide a comprehensive analysis in this exact JSON format:
 {{

@@ -1,4 +1,4 @@
-# main_silent.py
+# main.py
 import cv2
 import numpy as np
 import json
@@ -54,11 +54,11 @@ def analyze_multiple_images(image_paths, output_dir=None, output_json_path=None)
         
     return all_results
 
-def generate_comprehensive_report(json_data_path, output_report_path=None):
+def generate_comprehensive_report(json_data_path, years, output_report_path=None):
     analyzer = TrendAnalyzer()
     
     try:
-        report = analyzer.generate_mathematical_report(json_data_path)
+        report = analyzer.generate_mathematical_report(json_data_path, years)
         
         if output_report_path:
             with open(output_report_path, 'w') as f:
@@ -75,7 +75,7 @@ def generate_comprehensive_report(json_data_path, output_report_path=None):
                 json.dump(error_result, f, indent=2)
         return error_result
 
-def run_complete_analysis(image_paths, output_base_dir="results"):
+def run_complete_analysis(image_paths, years, output_base_dir="results"):
     os.makedirs(output_base_dir, exist_ok=True)
     os.makedirs(f"{output_base_dir}/visualizations", exist_ok=True)
     os.makedirs(f"{output_base_dir}/reports", exist_ok=True)
@@ -89,7 +89,8 @@ def run_complete_analysis(image_paths, output_base_dir="results"):
     
     # Step 2: Trend analysis
     trend_report = generate_comprehensive_report(
-        f"{output_base_dir}/segmentation_results.json",
+        f"{output_base_dir}/segmentation_results.json", 
+        years,
         output_report_path=f"{output_base_dir}/reports/trend_analysis_report.json"
     )
     
@@ -121,9 +122,9 @@ def run_complete_analysis(image_paths, output_base_dir="results"):
 
 if __name__ == "__main__":
     image_paths = [
-        "images/alaska_2000.png",
-        "images/alaska_2012.png", 
-        "images/alaska_2022.png"
+        "images/madagascar_2003.png",
+        "images/madagascar_2012.png", 
+        "images/madagascar_2022.png"
     ]
     
     final_results = run_complete_analysis(image_paths, "analysis_results")
