@@ -11,7 +11,7 @@ export default function WorkingPage() {
 
       {/* Input the 3 images using multer */}
       <form
-        action="/api/upload"
+        action="http://127.0.0.1:8080/api/upload"
         method="post"
         encType="multipart/form-data"
         className="mt-6"

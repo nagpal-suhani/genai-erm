@@ -7,6 +7,8 @@ exports.sendToMLModel = async(req,res)=>{
     try{
         const imagePaths = req.files.map(file => file.path);
 
+        console.log("Received images:", imagePaths);
+
         const job = await Job.create({ images: imagePaths, status: "queued",});
 
         await mlQueue.add("processML", {
