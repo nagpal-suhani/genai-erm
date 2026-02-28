@@ -1,4 +1,7 @@
-**😻Contributors:** @shivamm-verma , @damanpreet2005 , Suhani Nagpal
+| Role | Contributors |
+|------|--------------|
+| **Development** | @shivamm-verma, @damanpreet2005 |
+| **Model** | @nagpal-suhani |
 
 # 📌 GenAI Earth Resource Monitor
 **Objective**: GENAI Earth Resource Monitor is a system that analyzes satellite imagery to detect changes in forest cover, urban areas, and water bodies. The system automatically generates detailed and simple language reports for decision-makers, combining past trends and current metrics to give predictive forecasts.
